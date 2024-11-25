@@ -1,0 +1,195 @@
+import java.util.ArrayList;
+
+// Classe Base ProdutoEletronico
+class ProdutoEletronico {
+    private String nome;
+    private String marca;
+    private double preco;
+    private String descricao;
+
+    // Construtor
+    public ProdutoEletronico(String nome, String marca, double preco, String descricao) {
+        this.nome = nome;
+        this.marca = marca;
+        this.preco = preco;
+        this.descricao = descricao;
+    }
+
+    // Getters e Setters
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    // Método toString
+    @Override
+    public String toString() {
+        return "Produto Eletrônico: " + nome + "\nMarca: " + marca + "\nPreço: R$" + preco + "\nDescrição: " + descricao;
+    }
+}
+
+// Subclasse Smartphone
+class Smartphone extends ProdutoEletronico {
+    private String sistemaOperacional; // Sistema operacional
+    private int capacidadeArmazenamento; // Capacidade de armazenamento em GB
+
+    public Smartphone(String nome, String marca, double preco, String descricao, String sistemaOperacional, int capacidadeArmazenamento) {
+        super(nome, marca, preco, descricao);
+        this.sistemaOperacional = sistemaOperacional;
+        this.capacidadeArmazenamento = capacidadeArmazenamento;
+    }
+
+    // Getters e Setters
+    public String getSistemaOperacional() {
+        return sistemaOperacional;
+    }
+
+    public void setSistemaOperacional(String sistemaOperacional) {
+        this.sistemaOperacional = sistemaOperacional;
+    }
+
+    public int getCapacidadeArmazenamento() {
+        return capacidadeArmazenamento;
+    }
+
+    public void setCapacidadeArmazenamento(int capacidadeArmazenamento) {
+        this.capacidadeArmazenamento = capacidadeArmazenamento;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nSistema Operacional: " + sistemaOperacional + "\nCapacidade de Armazenamento: " + capacidadeArmazenamento + "GB";
+    }
+}
+
+// Subclasse SmartTV
+class SmartTV extends ProdutoEletronico {
+    private int tamanhoTela; // Tamanho da tela em polegadas
+    private boolean wifiIntegrado; // Indica se tem Wi-Fi integrado
+
+    public SmartTV(String nome, String marca, double preco, String descricao, int tamanhoTela, boolean wifiIntegrado) {
+        super(nome, marca, preco, descricao);
+        this.tamanhoTela = tamanhoTela;
+        this.wifiIntegrado = wifiIntegrado;
+    }
+
+    // Getters e Setters
+    public int getTamanhoTela() {
+        return tamanhoTela;
+    }
+
+    public void setTamanhoTela(int tamanhoTela) {
+        this.tamanhoTela = tamanhoTela;
+    }
+
+    public boolean isWifiIntegrado() {
+        return wifiIntegrado;
+    }
+
+    public void setWifiIntegrado(boolean wifiIntegrado) {
+        this.wifiIntegrado = wifiIntegrado;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nTamanho da Tela: " + tamanhoTela + " polegadas\nWi-Fi Integrado: " + (wifiIntegrado ? "Sim" : "Não");
+    }
+}
+
+// Subclasse Notebook
+class Notebook extends ProdutoEletronico {
+    private String processador; // Tipo de processador
+    private int memoriaRAM; // Memória RAM em GB
+
+    public Notebook(String nome, String marca, double preco, String descricao, String processador, int memoriaRAM) {
+        super(nome, marca, preco, descricao);
+        this.processador = processador;
+        this.memoriaRAM = memoriaRAM;
+    }
+
+    // Getters e Setters
+    public String getProcessador() {
+        return processador;
+    }
+
+    public void setProcessador(String processador) {
+        this.processador = processador;
+    }
+
+    public int getMemoriaRAM() {
+        return memoriaRAM;
+    }
+
+    public void setMemoriaRAM(int memoriaRAM) {
+        this.memoriaRAM = memoriaRAM;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nProcessador: " + processador + "\nMemória RAM: " + memoriaRAM + "GB";
+    }
+}
+
+// Subclasse SmartWatch
+class SmartWatch extends ProdutoEletronico {
+    private boolean monitoramentoSaude; // Se possui monitoramento de saúde
+    private int duracaoBateria; // Duração da bateria em horas
+
+    public SmartWatch(String nome, String marca, double preco, String descricao, boolean monitoramentoSaude, int duracaoBateria) {
+        super(nome, marca, preco, descricao);
+        this.monitoramentoSaude = monitoramentoSaude;
+        this.duracaoBateria = duracaoBateria;
+    }
+
+    // Getters e Setters
+    public boolean isMonitoramentoSaude() {
+        return monitoramentoSaude;
+    }
+
+    public void setMonitoramentoSaude(boolean monitoramentoSaude) {
+        this.monitoramentoSaude = monitoramentoSaude;
+    }
+
+    public int getDuracaoBateria() {
+        return duracaoBateria;
+    }
+
+    public void setDuracaoBateria(int duracaoBateria) {
+        this.duracaoBateria = duracaoBateria;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nMonitoramento de Saúde: " + (monitoramentoSaude ? "Sim" : "Não") + "\nDuração da Bateria: " + duracaoBateria + " horas";
+    }
+}
+
+
+
